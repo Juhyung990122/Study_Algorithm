@@ -19,3 +19,7 @@ import sys
 input_data = sys.stdin.readline().rstrip()
 
 ```
+
+- 재귀로 함수짜고 return 문으로 부르지 않으면
+가장 안쪽 함수 리턴값-> 한단계 위 -> 맨 위 리턴값을 리턴하게 된다. 
+꼭 return 붙여줄 것!
