@@ -37,3 +37,6 @@ for i in req_list:
         print('yes',end=' ')
     else:
         print('no',end=' ')
+
+#계수정렬풀이
+
