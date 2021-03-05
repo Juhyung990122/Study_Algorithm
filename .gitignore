@@ -1,3 +1,5 @@
 venv/
 .idea/
 .DS_Store
+algorithm/exercise/sw1.py
+algorithm/exercise/sw.py
