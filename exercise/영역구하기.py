@@ -12,7 +12,6 @@ for loca in rec:
         for r in range(m-loca[3],m-loca[1]): #가로
             graph[r][c] = -1
 
-count = 0
 answers = list()
 dx = [-1,1,0,0]
 dy = [0,0,-1,1]
@@ -21,7 +20,7 @@ for i in range(m): #세로
         if graph[i][j] == 0 :
             queue = deque()
             queue.append((i,j))
-            count += 1
+            graph[i][j] = 1
             answer = 1
             while queue:
                 x,y = queue.popleft()
@@ -31,8 +30,11 @@ for i in range(m): #세로
                     if 0 <= move_x < m and 0 <= move_y < n:
                         if graph[move_x][move_y] == 0:
                             answer += 1
-                            graph[move_x][move_y] = count
+                            graph[move_x][move_y] = 1
                             queue.append((move_x,move_y))
             answers.append(answer)
-print(count)
-print(answers)
+
+print(len(answers))
+answers.sort()
+for i in answers:
+    print(i,end = ' ')
