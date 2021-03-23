@@ -7,7 +7,6 @@ def solution(d, budget):
         sum_d += d[i]
         if budget >= sum_d :
             answer += 1
-            print(answer)
     return answer
 
 print(solution([2,2,3,3],10))
