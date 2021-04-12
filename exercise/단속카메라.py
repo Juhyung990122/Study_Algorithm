@@ -1,5 +1,6 @@
 def solution(routes):
     answer = 0
+    # 진출시점이 가장 뒤에 있는애부터 돌아야하니까 정렬
     routes.sort(key=lambda x : x[1])
     # 최소값으로 초기화
     camera = -30000
