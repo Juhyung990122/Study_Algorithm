@@ -11,7 +11,6 @@ dp = [[0] * (k+1) for _ in range(n)]
 for i in range(len(obj_list)):
     w,v = obj_list[i]
     for j in range(k+1):
-        print(w,j)
         if w <= j:
             dp[i][j] = max(v + dp[i-1][j - w],dp[i-1][j])
         else:

@@ -1,36 +1,31 @@
 import sys
 from collections import deque
-
+sys.setrecursionlimit(10 ** 8)
 n,m = map(int,sys.stdin.readline().split())
 graph = list()
 for _ in range(n):
     graph.append(list(map(int,sys.stdin.readline().rstrip().split())))
 
-queue = deque()
-queue.append((0,0))
-visited = list(list([0]*m) for _ in range(n))
+dp = list(list([-1]*m) for _ in range(n))
 
-dx = [-1,1,0,0]
-dy = [0,0,-1,1]
-answer = 0
-height = graph[0][0]
+def dfs(col,row):
 
-while queue:
-    now = queue.pop()
-    height = graph[now[0]][now[1]]
-    for k in range(4):
-        move_r = now[1] + dx[k]
-        move_c = now[0] + dy[k]
-        if 0 <= move_r < m and 0 <= move_c < n and visited[move_c][move_r] == 0 and height > graph[move_c][move_r]:
-            queue.append((move_c,move_r))
-            visited[move_c][move_r] += 1
-    
-    if visited[n-1][m-1] == 1:
-        answer += 1
-        visited = list(list([0]*m) for _ in range(n))
+    dx = [-1,1,0,0]
+    dy = [0,0,-1,1]
 
-print(answer)
-                
+    if col == n-1 and row == m-1:
+        return 1
+
+    if dp[col][row] == -1 :
+        dp[col][row] = 0
+        for i in range(4):
+            move_col = col + dy[i]
+            move_row = row + dx[i]
+            if 0 <= move_col < n and 0 <= move_row < m:
+                if graph[col][row] > graph[move_col][move_row]:
+                    dp[col][row] += dfs(move_col,move_row)
+    return dp[col][row]
+print(dfs(0,0))
                     
 
 
