@@ -1,22 +1,25 @@
 from collections import deque
+from math import inf 
 def solution(N, road, K):
     answer = 0
-    graph = dict()
-    for i in range(len(road)):
-        graph[i+1] = list()
-    for v1,v2,cost in road:
-        graph[v1].append([v2,cost])
-        graph[v2].append([v1,cost])
-    cost_list = { i:float('inf') if i != 1 else 0 for i in range(1, N+1) }
+
+    cost_list = [inf] * (N+1)
+    visited = [False] * (N+1)
+    cost_list[1] = 0
     queue = deque([1])
     while queue:
         now = queue.popleft()
-        for v2,cost in graph[now]:
-            if cost_list[v2] > cost_list[now] + cost:
-                cost_list[v2] = cost_list[now] + cost
-                queue.append(v2)
+        visited[now] = True
+        for v1,v2,cost in road:
+            if now == v1 or now == v2:
+                target = v1
+                if v1 == now:
+                    target = v2
+                if cost_list[target] > cost_list[now] + cost:
+                    cost_list[target] = cost_list[now] + cost
+                    queue.append(target) 
 
-    for i in cost_list.values():
+    for i in cost_list:
         if i <= K:
             answer += 1
     return answer
