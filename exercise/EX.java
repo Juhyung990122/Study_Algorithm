@@ -1,4 +1,4 @@
-package algorithm.exercise;
+
 import java.math.BigInteger;
 
 public class EX{

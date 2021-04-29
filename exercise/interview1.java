@@ -1,7 +1,3 @@
-package algorithm.exercise;
-
-
-
 public class interview1{
     public static void main(String [] args ){
         Integer s = Solution(50);

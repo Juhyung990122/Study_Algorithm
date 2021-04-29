@@ -1,5 +1,3 @@
-package algorithm.exercise;
-
 public class interview2 {
     public static void main(String [] args ){
         int[][] m ={{5, -1, 4}, {6, 3, -1}, {2, -1, 1}};
