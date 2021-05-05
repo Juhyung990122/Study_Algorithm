@@ -30,7 +30,6 @@ public class BOJ1463 {
                 dp[i] = Math.min(dp[i],dp[i/2]+1);
             }
             
-            System.out.println(Arrays.toString(dp));
         }
         
         bw.write(dp[n] + "\n");
