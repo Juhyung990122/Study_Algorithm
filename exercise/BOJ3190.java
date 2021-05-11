@@ -1,5 +1,4 @@
 
-import java.util.Arrays;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Scanner;
@@ -98,11 +97,5 @@ public class BOJ3190 {
         return false;
     }
 
-
-    private static void printArray(List<int[]> snake2){
-        for (int[] i : snake2){
-            System.out.println(Arrays.toString(i));
-        }
-    }
 
 }
