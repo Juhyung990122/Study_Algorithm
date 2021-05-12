@@ -15,6 +15,7 @@ for _ in range(n):
                 # 뒤쪽을 쭉 검사하면서 있으면 이 문자열에 대한 검사 종료
                 if string[i] in string[i+1:]:
                     break
-    #끝까지 잘 왔으면
-    answer += 1
+        else:
+            #끝까지 잘 왔으면
+            answer += 1
 print(answer)
