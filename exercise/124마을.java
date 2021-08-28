@@ -1,4 +1,4 @@
-class Solution {
+class OnehundredTwentyFourVillage{
     public String solution(int n) {
         String answer = "";
         int share = n;

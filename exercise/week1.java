@@ -1,5 +1,5 @@
-class Solution {
-    public long solution(int price, int money, int count) {
+class week1 {
+    private static Long solution(int price, int money, int count) {
         long answer = 0;
         long total = 0;
         
@@ -12,7 +12,7 @@ class Solution {
             return answer;
         }
         else{
-            return 0;
+            return 0L;
         }
         
     }
