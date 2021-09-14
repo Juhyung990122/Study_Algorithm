@@ -1,31 +1,4 @@
 from collections import deque
-'''def solution(n, costs):
-    s = min(min(costs, key=lambda x : x[0])[0],min(costs, key=lambda x : x[0])[1])
-    e = max(max(costs, key=lambda x: x[0])[0],max(costs, key=lambda x: x[0])[1])
-    answer = 0
-    road = dict()
-    for index in range(s,e+1):
-        road[index] = list()    
-    for i in range(len(costs)):
-        road[costs[i][0]].append([costs[i][1],costs[i][2]])
-        road[costs[i][1]].append([costs[i][0],costs[i][2]])
-
-    cost = list()
-    queue = deque()
-    for start in range(s,e+1):
-        visited = [0] * (e+1)
-        queue.append(start)
-        visited[start] = 1
-        cost_sum = 0
-        while queue:
-            now = queue.popleft()
-            for c in range(len(road[now])):
-                if visited[road[now][c][0]] == 0 :
-                    queue.append(road[now][c][0])
-                    visited[road[now][c][0]] = 1
-                    cost_sum += road[now][c][1]
-        cost.append(cost_sum)
-    return min(cost)'''
 def solution(n, costs):
     answer = 0
     costs.sort(key=lambda x : x[2])
