@@ -1,18 +1,6 @@
 #bfs example
 from collections import deque
 
-def bfs(graph, start, visited):
-    queue = deque([start])
-    visited[start] = True
-
-    while queue:
-        v = queue.popleft()
-        print(v , end=' ')
-        for i in graph[v]:
-            if not visited[i]:
-                queue.append(i)
-                visited[i]=True
-
 graph = [
     [],
     [2,3,8],
@@ -23,6 +11,18 @@ graph = [
     [7],
     [2,6,8],
     [1,7]
-]
-visited = [False]*9
-print(bfs(graph,1,visited))
+] 
+visited = [0] * 9
+
+queue = deque([1])
+visited[1] = 1
+while queue:
+    p = queue.popleft()
+    print(p,end=" ")
+    for i in graph[p]:
+        if visited[i] == 0:
+            queue.append(i)
+            visited[i] = 1
+
+
+
