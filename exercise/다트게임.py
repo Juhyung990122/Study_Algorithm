@@ -11,7 +11,7 @@ def solution(dartResult):
             num = stack.pop()
             stack.append(num**mul[i])
         elif i == "#":
-            stack[-1] -= -1
+            stack[-1] *= -1
         elif i == "*":
             num = stack.pop()
             if len(stack) != 0:
