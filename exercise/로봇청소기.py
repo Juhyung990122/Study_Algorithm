@@ -15,7 +15,6 @@ graph[y][x] = 2
 
 while True:
     visited = False
-    print(graph)
     for i in range(4):
         head = (head - 1) % 4
         move_y = y + dy[head]
