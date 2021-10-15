@@ -1,8 +1,9 @@
+from collections import deque
 def solution(numbers, target):
     answer = 0
-    queue = list([[0,0]])
+    queue = deque([[0,0]])
     while queue:
-        num,idx = queue.pop(0)
+        num,idx = queue.popleft()
         if idx == len(numbers):
             if num == target:
                 answer += 1
@@ -10,7 +11,8 @@ def solution(numbers, target):
             add_num = numbers[idx]
             queue.append([num+add_num,idx+1])
             queue.append([num-add_num,idx+1])
-
+            print(queue)
     return answer
 
 print(solution([1, 2, 3, 4, 5],3))
+
