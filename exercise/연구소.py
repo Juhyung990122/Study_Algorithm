@@ -60,14 +60,11 @@ for i in range(len(empty)):
 
     virus,v = bfs(g_copy,2)
 
-    safe,s = bfs(virus,0)
     for a in range(n):
         for b in range(m):
-            if s[a][b] == 1:
+            if virus[a][b] == 0:
                 safe_zone += 1
     if safe_zone > max:
         max = safe_zone
-
-
 
 print(max) 
