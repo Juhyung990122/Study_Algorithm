@@ -27,7 +27,7 @@ def bfs(g,num):
         for j in range(m):
             if visited[i][j] == 1:
                 r_graph[i][j] = num
-    return r_graph,visited
+    return r_graph
 
 
 global n,m
@@ -58,7 +58,7 @@ for i in range(len(empty)):
     for j in range(3):
         g_copy[wall[j][0]][wall[j][1]] = 1
 
-    virus,v = bfs(g_copy,2)
+    virus = bfs(g_copy,2)
 
     for a in range(n):
         for b in range(m):
