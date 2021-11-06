@@ -4,7 +4,6 @@ def solution(a, b):
     d = 0
     for i in range(0,a):
         d += months[i]
-        print(i+1,d)
     d += b
     return week[d % 7 - 1]
 print(solution(5,24))
