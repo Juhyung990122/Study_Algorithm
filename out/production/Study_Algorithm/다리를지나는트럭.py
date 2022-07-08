@@ -1,18 +1,21 @@
 def solution(bridge_length, weight, truck_weights):
+    answer = 0    
     bridge = [0] * bridge_length
-    t = 0
-    while bridge:
-        #다른 트럭 들어올 공간 마련하고
-        bridge.pop(0)
-        t += 1
-        if truck_weights:
-            if sum(bridge)+truck_weights[0] <= weight:
-                # 무게검사 통과하면 트럭 넣고
-                bridge.append(truck_weights.pop(0))
-            # 무게 다 차면 전진시킴
-            else:
-                bridge.append(0)
-        
-    return t
+    while True:
 
-print(solution(2,	10,	[7,4,5,6]))
+        bridge.pop(0)
+
+        if sum(bridge) <= weight and truck_weights:
+            bridge.append(truck_weights[0])
+            truck_weights.pop(0)
+
+        else:
+            bridge.append(0)
+        answer += 1
+
+        if sum(bridge) == 0 and len(truck_weights) == 0:
+            break
+
+    return answer
+
+print(solution(100,100,[10]))
